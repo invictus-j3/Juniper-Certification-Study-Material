@@ -125,9 +125,10 @@
   - Also called summary routes
 - External
   - Routes re-advertised from outside of OSPF
-    - E1: Inherits cost of external metric plus the internal costs
+    - E1 (External Type 1): Inherits cost of external metric plus the internal costs
       - E1 routes are preferred when equal E1 and E2 routes exist
-    - E2: Inherits cost of external metric and does not add cost
+    - E2 (External Type 2): Inherits cost of external metric and does not add cost
+      - Default for Junos, must be modified by policy
 
 ## SPF LSA Types
 
