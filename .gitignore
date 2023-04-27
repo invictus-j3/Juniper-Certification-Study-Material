@@ -1,4 +1,5 @@
 # Ignore VC Code and MAC artifacts
 
+spellright.dict
 **/.vscode
 **/.DS_Store
