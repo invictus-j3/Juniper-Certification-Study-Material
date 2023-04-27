@@ -1,4 +1,4 @@
-.vscode/
-.DS_Store/
+# Ignore VC Code and MAC artifacts
 
-JNCIS-ENT/Lab_Notes
+**/.vscode
+**/.DS_Store
