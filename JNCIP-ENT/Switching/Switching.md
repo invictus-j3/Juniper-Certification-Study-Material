@@ -78,4 +78,38 @@ Review section
 ## Authenticate Access
 
 Review sections
- 
+
+## Power over Ethernet (PoE)
+
+Type of PoE Devices:
+
+- PSE : Power Sourcing Equipment
+- PD : Powered Device
+
+PoE Power Budget is the total amount of power that can allocated to all powered devices (PD) connected to a switch (PSE). PoE budget is a function of Power Supply Units (PSU) installed.
+
+PoE is delivered via two modes, __static__ or __class__.
+
+Class is based on standards.
+
+### __Power Classification Summary__
+
+| Class | Maximum Power (at PSE) | Power Range of PD |
+| --- | :---: | :---:|
+| 0 | 15.4 W | 0.44 through 12.95 W |
+| 1 | 4.0 W | 0.44 through 3.84 W |
+| 2 | 7.0 W | 3.84 through 6.49 W |
+| 3 | 15.4 W | 6.49 through 12.95 W |
+| 4 | 30.0 W | 12.95 through 25.5 W |
+
+## Link Layer Discovery Protocol (LLDP)
+
+Layer 2 neighbor discovery protocol. Allows devices to share information. Two versions, __LLDP__ and __LLDP-MED__, and extension of LLDP.
+
+LLDP-MED == Media Endpoint Discovery. Primarily used to identify IP phones, for example to handle emergency services.
+
+Information is defined by TLVs.
+
+TLVs sent every 30 seconds by default. Database entires are purged after 120 seconds of no messages.
+
+## Class of Service (CoS)
