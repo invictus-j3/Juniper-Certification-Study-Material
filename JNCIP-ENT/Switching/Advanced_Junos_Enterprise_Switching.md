@@ -38,10 +38,52 @@ Promiscuous and trunk ports must include __inter-switch-link__ configuration on 
 
 ### Configuration Elements
 
-- Secondary VLANs are configured with the private-vlan [ community | isolated ] statement
-- The Primary VLAN uses the isolated-vlan [ vlan ] and community-vlans [ vlans ] to apply the Secondary VLANs
-- Access interfaces are configured with the appropirate Secondary VLANs
-- For interfaces connecting switches:
+The Primary VLAN uses the isolated-vlan [ vlan ] and community-vlans [ vlans ] to apply the Secondary VLANs.
+
+```junos title="Primary VLAN Configuration"
+[edit vlans]
+<primary_vlan_name>
+    isolated-vlan <isolated_vlan_name>
+    community-vlans <community_vlan_name(s)>
+```
+
+Secondary VLANs are configured with the private-vlan [ community | isolated ] statement.
+
+```junos title="Secondary VLAN Configuration"
+[edit vlans]
+<secondary_vlan_name>
+    private-vlan <isolated | community>
+```
+
+Access interfaces are configured with the appropirate Secondary VLANs.
+
+```junos title="P-VLAN Access Port Configuration"
+[edit interfaces]
+ge-x/y/z {
+  unit 0 family ethernet-switching {
+    interface-mode access;
+    vlan {
+      members <isolated_vlan_name | community_vlan_name>
+    }
+  }
+}
+```
+
+For interfaces connecting switches, configure a trunk interface with the inter-switch-link flag and just the primary VLAN assigned.
+
+```junos title="Inter-Switch-Link Configuration"
+[edit interfaces]
+ge-x/y/z {
+  unit 0 family ethernet-switching {
+    interface-mode trunk;
+    inter-switch-link;
+    vlan {
+      members <primary_vlan_name>
+    }
+  }
+}
+```
+
   - they need to be configured with:
     - interface-mode trunk
     - inter-switch-link
