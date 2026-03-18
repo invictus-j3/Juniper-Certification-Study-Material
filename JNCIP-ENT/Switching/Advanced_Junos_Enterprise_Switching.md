@@ -38,7 +38,7 @@ Promiscuous and trunk ports must include `inter-switch-link` configuration on bo
 
 ### P-VLAN Configuration Elements
 
-The Primary VLAN uses the `isolated-vlan [ vlan ]` and `community-vlans [ vlans ]` to apply the Secondary VLANs.
+The Primary VLAN uses the `isolated-vlan [ vlan ]` and `community-vlans [ vlan(s) ]` to apply the Secondary VLANs.
 
 ```junos title="Primary VLAN Configuration"
 [edit vlans]
