@@ -38,7 +38,7 @@ Promiscuous and trunk ports must include `inter-switch-link` configuration on bo
 
 ### P-VLAN Configuration Elements
 
-The Primary VLAN uses the isolated-vlan [ vlan ] and community-vlans [ vlans ] to apply the Secondary VLANs.
+The Primary VLAN uses the `isolated-vlan [ vlan ]` and `community-vlans [ vlans ]` to apply the Secondary VLANs.
 
 ```junos title="Primary VLAN Configuration"
 [edit vlans]
@@ -47,7 +47,7 @@ The Primary VLAN uses the isolated-vlan [ vlan ] and community-vlans [ vlans ] t
     community-vlans <community_vlan_name(s)>
 ```
 
-Secondary VLANs are configured with the private-vlan [ community | isolated ] statement.
+Secondary VLANs are configured with the `private-vlan [ community | isolated ]` statement.
 
 ```junos title="Secondary VLAN Configuration"
 [edit vlans]
@@ -69,7 +69,7 @@ ge-x/y/z {
 }
 ```
 
-For interfaces connecting switches, configure a trunk interface with the inter-switch-link flag and just the primary VLAN assigned.
+For interfaces connecting switches, configure a trunk interface with the `inter-switch-link` flag and just the primary VLAN assigned.
 
 ```junos title="Inter-Switch-Link Configuration"
 [edit interfaces]
